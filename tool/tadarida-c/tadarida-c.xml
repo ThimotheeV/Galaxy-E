@@ -1,0 +1,45 @@
+<tool id="tadarida-c" name="Tadarida-C" version="1.0">
+    
+    <description>Toolbox for Animal Detection on Acoustic Recordings - Classification part</description>
+
+    <requirements>
+    </requirements>
+    <stdio>
+        <exit_code range="1:" />
+    </stdio>
+    
+    <command>
+        <![CDATA[
+        tadaridaC
+        ]]>
+    </command>
+
+    <inputs>
+
+    
+
+        </section>
+
+    </inputs>
+
+    <outputs>
+        
+    </outputs>
+
+    <tests>
+        <test>
+            
+        </test>
+    </tests>
+
+    <help><![CDATA[
+   
+    ]]>
+    </help>
+
+    <citations>
+        <citation type="doi">10.5334/jors.154</citation>
+    </citations>
+
+
+</tool>
