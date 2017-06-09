@@ -1,40 +1,36 @@
-<tool id="tadarida-c" name="Tadarida-C" version="1.0">
+<tool id="tadarida-c" name="Tadarida-c" version="1.0">
     
     <description>Toolbox for Animal Detection on Acoustic Recordings - Classification part</description>
-
-    <requirements>
-    </requirements>
+    
     <stdio>
         <exit_code range="1:" />
     </stdio>
     
     <command>
         <![CDATA[
-        Rscript ../../../tadarida-c/tadaridaC.r ${fichierTa} ${Classifier} ;
+        Rscript /home/loup/Bureau/Dev_Project/Outils/Tadarida-C/Tadarida-C/tadaridaC.r ${fichierTa} ${Classifier.fields.path} ;
         mv dataset_*.tc output
         ]]>
     </command>
 
-    <inputs>
-		
+    <inputs>		
 		<param name="fichierTa" type="data" format="tabular" label="Detected sound events file(s)" help=" Detected sound events file(s) comme from Tadarida-D tool" />
 
-		<param name="Classifier" type="data" label="Detected sound events file(s)" help=" Detected sound events file(s) comme from Tadarida-D tool" />
+		<param name="Classifier" type="select" label="Classifier" help="Methode">
+			<options from_file="tadarida.loc">
+                <column name="value" index="0"/>
+                <column name="name" index="1"/>
+                <column name="path" index="2"/>
+			</options>
+        </param>
 
     </inputs>
 
-     <outputs>
+    <outputs>
         <data format="tabular" name="output" label="${fichierTa.element_identifier}" from_work_dir="./output"/>
 	</outputs>
 
-    <tests>
-        <test>
-            
-        </test>
-    </tests>
-
-    <help><![CDATA[
-   
+    <help><![CDATA[Salut
     ]]>
     </help>
 
