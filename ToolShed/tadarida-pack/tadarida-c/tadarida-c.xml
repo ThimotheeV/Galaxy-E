@@ -1,4 +1,4 @@
-<tool id="tadarida-c" name="Tadarida-c" version="1.0">
+<tool id="tadarida-c" name="Tadarida-c" version="0.1">
     
     <description>Toolbox for Animal Detection on Acoustic Recordings - Classification part</description>
     
@@ -16,7 +16,7 @@
     <inputs>		
 		<param name="fichierTa" type="data" format="tabular" label="Detected sound events file(s)" help=" Detected sound events file(s) comme from Tadarida-D tool" />
 
-		<param name="Classifier" type="select" label="Classifier" help="Methode">
+		<param name="Classifier" type="select" label="Classifier" help="Chose one. The anme is set followinf this rule : ClassifierAlgoName_DataOrigin. Come from expert user, not possible to create it with Galaxy.">
 			<options from_file="tadarida.loc">
                 <column name="value" index="0"/>
                 <column name="name" index="1"/>
@@ -30,7 +30,17 @@
         <data format="tabular" name="output" label="${fichierTa.element_identifier}" from_work_dir="./output"/>
 	</outputs>
 
-    <help><![CDATA[Salut
+    <tests>
+        <test>
+            <param name="fichierTa" value="Test1.ta" ftype="tabular"/>
+            <param name="Classifier.fields.path" value="./test-data/ClassifEspHF3.learner" ftype="data"/>
+            <output name="output" file="Resultat_test1.tc" ftype="tabular"/>
+        </test>
+    </tests>
+
+    <help><![CDATA[
+        Tadarida-c handles the classification of DSEs (Detected sound events), based on features extracted by Tadarida-D and a classifier, and thus provides the final output of the Tadarida toolbox.
+        Tadarida-c tool aims at returning to the user the list of species present on each treated .wav file, and a confidence index of each automatic identification.
     ]]>
     </help>
 
