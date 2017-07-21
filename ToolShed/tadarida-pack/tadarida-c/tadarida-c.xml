@@ -3,7 +3,7 @@
     <description>Toolbox for Animal Detection on Acoustic Recordings - Classification part</description>
     
     <requirements>
-         <requirement type="package" version="1.0">tadarida-c</requirement>
+         <requirement type="package" version="1.1">tadarida-c</requirement>
     </requirements>
 
     <stdio>
@@ -20,7 +20,7 @@
     <inputs>		
 		<param name="fichierTa" type="data" format="tabular" label="Detected sound events file(s)" help=" Detected sound events file(s) comme from Tadarida-D tool" />
 
-		<param name="Classifier" type="select" label="Classifier" help="Chose one. The anme is set followinf this rule : ClassifierAlgoName_DataOrigin. Come from expert user, not possible to create it with Galaxy.">
+		<param name="Classifier" type="select" label="Classifier" help="Chose one. The name is set followinf this rule : ClassifierAlgoName_DataOrigin. Come from expert user, not possible to create it with Galaxy.">
 			<options from_file="tadarida.loc">
                 <column name="value" index="0"/>
                 <column name="name" index="1"/>

@@ -8,7 +8,7 @@ from galaxy.util import nice_size
 
 import os
 import logging
-from . import binary
+from galaxy.datatypes import binary
 
 log = logging.getLogger(__name__)
 
